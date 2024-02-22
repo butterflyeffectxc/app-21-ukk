@@ -1,0 +1,355 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Source+Code+Pro:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+.my-font{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
+}
+small {
+  font-weight: 700;
+}
+.extra-bold{
+  font-weight: 800;
+}
+p{
+  line-height: 2em;
+}
+.bold{
+  font-weight: 700;
+}
+.receipt{
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.vl {
+  height: 10rem;
+  width: 5px;
+  background-color: #E3857C;
+  border-radius: 99px;
+  margin: 1rem 1rem 0 0;
+  padding-top: 5rem;
+}
+.login-bg{
+  background-image: radial-gradient(#7D8BAD, #FFFFFF);
+  /* background-color: red; */
+}
+.bg-purple{
+  background-color: #7D8BAD;
+}
+.bg-pink{
+  background-color: #FFF1EE;
+}
+.bg-dark-purple{
+  top: -10em;
+/*   position: relative;
+  background-image: url('/assets/bg-register.svg');
+  background-size: cover;
+  background-position: bottom ;
+  width: 100%;
+  height: 50em;
+  color: white; */
+  background-image: url('/assets/bg-register.svg');
+  background-size: cover;
+  background-position: center top ;
+  width: 100%;
+  height: 20em;
+  padding: 5rem 0;
+  color: white;
+}
+.join{
+  top: -20em;
+  position: relative;
+}
+/* .login-left{
+  background-color: #7D8BAD;
+} */
+.hr {
+  border: none;
+  border-top: 1px dotted rgb(0, 0, 0);
+  color: #fff;
+  background-color: #fff;
+  height: 1px;
+  width: 100%;
+}
+.btn-color{
+    background-color: #45496A !important;
+    color: white !important;
+}
+
+.text-pink{
+    color: #E3857C !important;
+    /* color: white !important; */
+}
+
+.btn-color:hover{
+    background-color: #F1B2B2 !important;
+    color: black !important;
+}
+
+.btn-color-light{
+    background-color: #F1B2B2 !important;
+    color: black ;
+}
+
+.add-button{
+    cursor: pointer;
+    transition: all 0.5s;
+    border: none;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .add-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  .add-button span:after {
+    content: '+';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -20px;
+    transition: 0.5s;
+  }
+  .add-button:hover span {
+    padding-left: 25px;
+  }
+  
+  .add-button:hover span:after {
+    opacity: 1;
+    left: 0;
+  }
+  .cancel-button{
+    cursor: pointer;
+    transition: all 0.5s;
+    border: none;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .cancel-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  .cancel-button span:after {
+    content: '-';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -20px;
+    transition: 0.5s;
+  }
+  .cancel-button:hover span {
+    padding-left: 25px;
+  }
+  
+  .cancel-button:hover span:after {
+    opacity: 1;
+    left: 0;
+  }
+  .back-button{
+    background-color: #f79e33; 
+    cursor: pointer;
+    transition: all 0.5s;
+    border: none;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .back-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  .back-button span:after {
+    content: '\00ab';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -20px;
+    transition: 0.5s;
+  }
+  .back-button:hover span {
+    padding-left: 25px;
+  }
+  
+  .back-button:hover span:after {
+    opacity: 1;
+    left: 0;
+  }
+  .next-button{
+    /* background-color: success;  */
+    cursor: pointer;
+    transition: all 0.5s;
+    border: none;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .next-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  .next-button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  .next-button:hover span {
+    padding-right: 25px;
+  }
+  
+  .next-button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+.card-transparent{
+    background-color: #FFFFFF transparent 20%;
+    /* opacity: 0.8; */
+    backdrop-filter: blur(10px); 
+    width: 30rem; height: 22rem;
+    padding-top: 3.5rem;
+    /* -webkit-filter: blur(1px); */  
+}
+.heading{
+    background-color: #FFF1EE;
+}
+
+.icon-link{
+    color: #E3857C;
+    font-size: 40px;
+}
+
+.icon-link:hover{
+    color: #45496A;
+    font-size: 40px;
+}
+.text-link:hover{
+    color: #E3857C;
+    text-decoration: underline;
+    /* font-size: 40px; */
+}
+
+.text-link{
+    color: #45496A;
+    text-decoration:dotted;
+    /* font-size: 40px; */
+}
+.btn-rounded{
+    border-radius: 12rem !important;
+    background-color: #FFF1EE !important;
+    color: #45496A;
+}
+.btn-rounded:hover{
+    border-radius: 12rem;
+    background-color: #FFF1EE !important;
+    color: #45496A;
+    cursor: default;
+}
+
+.background-dashboard{
+    background-image: url('/assets/background-dashboard.svg') ;
+    background-size: cover;
+    background-position: top left;
+    width: 100%;
+    height: auto;
+}
+
+.background-main{
+    background-image: url('/assets/background-dashboard.svg') ;
+    /* background-color: red ; */
+    background-size: cover;
+    background-position: top left;
+    width: 100%;
+    height: auto;
+}
+
+.footer{
+    background-color: #45496A;
+}
+
+.navbar-color{
+    background-color: #45496A;
+}
+
+.card-link{
+  text-decoration: none;
+  color: black;
+}
+
+.card-link:hover{
+  text-decoration: none;
+  color: #45496A;
+}
+/* Rating */
+.hidden-checkbox {
+  position: absolute;
+  left: -9999px;
+  color: red
+}
+
+.heart-icon .bi-heart-fill {
+  display: none;
+  color: red;
+}
+
+#rating:checked ~ .heart-icon .bi-heart {
+    display: none;
+    color: red
+}
+
+#rating:checked ~ .heart-icon .bi-heart-fill {
+    display: inline-block;
+    color: red
+}
+/* End Rating */
+@media screen and(min-width: 320px) and (max-width: 1023px){
+  .feature{
+    align-items: center;
+    text-align: center;
+  }
+  .feature-img{
+    width: 100%;
+    height: auto;
+  }
+  .bg-dark-purple {
+    padding-top: 10rem;
+  }
+
+}
+
+@media screen and (max-width: 766px){
+  .vl{
+    display: none !important;
+  }
+  .book-img{
+    padding: 1em;
+    width: 40%;
+  }
+  .review{
+    align-items: center;
+    text-align: center;
+  }
+  .heading-img{
+    width: 95%;
+  }
+  .book-heading-img{
+    width: 50%;
+    padding-bottom: 2em;
+  }
+  .cover-img{
+    width: 50%;
+  }
+  .book-detail{
+    align-items: center;
+    text-align: center;
+  }
+}
