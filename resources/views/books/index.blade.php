@@ -46,7 +46,7 @@
                             @foreach ($books as $book)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $book->cover }}</td>
+                                    <td><img src="{{ $book->cover ? asset('storage/'. $book->cover) : asset('assets/book-undefined.png') }}" alt="" width="100"></td>
                                     <td>{{$book->title}}</td>
                                     <td>{{ $book->author }}</td>
                                     <td>@foreach ($book->categories as $category)

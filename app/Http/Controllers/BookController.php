@@ -48,7 +48,8 @@ class BookController extends Controller
         ]);
 
         if($request->file('cover')){
-            $book = $request->file('cover')->store('book-cover');
+            $cover = $request->file('cover')->store('book-cover');
+            $data['cover'] = $cover;
         }
         $book = Book::create($data);
         $book->categories()->sync($request['categories']);
@@ -88,7 +89,8 @@ class BookController extends Controller
 
         if($request['cover']){
             $book = Storage::delete($book->cover);
-            $book = $request->file('cover')->store('book-cover');
+            $cover = $request->file('cover')->store('book-cover');
+            $data['cover'] = $cover;
         }
 
         $book->update($data);
@@ -101,7 +103,7 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        
+        if($book->cover) Storage::delete($book->cover);
         $book->delete();
         return redirect('/books');
     }

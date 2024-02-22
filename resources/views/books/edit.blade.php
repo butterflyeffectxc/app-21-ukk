@@ -96,7 +96,7 @@
 
                     </div>
                     <div class="justify-content-end d-flex">
-                        <a href="/books" class="btn btn-warning back-button me-2"><span>Bek</span></a>
+                        <a href="/books" class="btn btn-warning back-button me-2"><span>Back</span></a>
                         <button type="submit" class="btn btn-primary add-button"><span>Submit</span></button>
                     </div>
                 </form>
