@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\BorrowingController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -75,11 +76,11 @@ Route::delete('/operators/delete/{user:id}', [OperatorController::class, "destro
 // Admin - Report
 Route::get('/reports/generate/all',[BorrowingController::class, 'reportAll']);
 Route::get('/report/generate/{borrowing:id}',[BorrowingController::class, 'reportOne']);
-// User - User
-Route::get('/users', [UserController::class, "index"]);
-Route::get('/users/detail/{user:id}', [UserController::class, "getById"]);
-Route::get('/users/create', [UserController::class, "create"]);
-Route::post('/users/create', [UserController::class, "store"]);
-Route::get('/users/edit/{user:id}', [UserController::class, "edit"]);
-Route::put('/users/edit/{user:id}', [UserController::class, "update"]);
-Route::delete('/users/delete/{user:id}', [UserController::class, "destroy"]);
+// User - Collection
+Route::get('/collections', [CollectionController::class, "index"]);
+Route::get('/collections/detail/{user:id}', [CollectionController::class, "getById"]);
+Route::get('/collections/create', [CollectionController::class, "create"]);
+Route::post('/collections/create', [CollectionController::class, "store"]);
+Route::get('/collections/edit/{user:id}', [CollectionController::class, "edit"]);
+Route::put('/collections/edit/{user:id}', [CollectionController::class, "update"]);
+Route::delete('/collections/delete/{user:id}', [CollectionController::class, "destroy"]);
