@@ -86,6 +86,9 @@
                         <li class="submenu-item">
                             <a href="/users" class="submenu-link">Data User</a>
                         </li>
+                        <li class="submenu-item">
+                            <a href="/operators" class="submenu-link">Data Operator</a>
+                        </li>
 
                         {{-- <li class="submenu-item">
                             <a href="/users" class="submenu-link">Operator</a>

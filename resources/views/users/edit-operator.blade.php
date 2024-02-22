@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-header mb-2">
                 <h5 class="card-title">
-                    Edit User
+                    Edit Librarian
                 </h5>
             </div>
             <div class="card-body">
@@ -56,7 +56,7 @@
                             
                         </div>
                         <input type="text" class="form-control" id="role" name="role"
-                            value="3" hidden>
+                            value="2" hidden>
                     <div class="justify-content-end d-flex">
                         <a href="/users" class="btn btn-warning back-button me-2"><span>Back</span></a>
                         <button type="submit" class="btn btn-primary add-button "><span>Submit</span></button>

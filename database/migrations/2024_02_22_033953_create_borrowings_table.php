@@ -26,7 +26,7 @@ return new class extends Migration
         CREATE TRIGGER borrow_book AFTER INSERT ON borrowings
         FOR EACH ROW
         BEGIN
-            IF status = 1 THEN
+            IF new.status = "1" THEN
             UPDATE books SET availability = availability - new.quantity WHERE id = new.book_id;
             END iF;
         END
@@ -35,7 +35,7 @@ return new class extends Migration
         CREATE TRIGGER return_book AFTER UPDATE ON borrowings
         FOR EACH ROW
         BEGIN
-            IF status = 0 AND old.status != 0 THEN
+            IF new.status = "0" AND old.status != "0" THEN
             UPDATE books SET availability = availability + new.quantity WHERE id = new.book_id;
             END iF;
         END
@@ -48,5 +48,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('borrowings');
+        Schema::dropIfExists('borrow_book');
+        Schema::dropIfExists('return_book');
     }
 };

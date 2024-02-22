@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="mb-3 form-group col-md-6">
                                     <label for="nik" class="form-label">NIK</label>
-                                    <input type="nik" class="form-control" id="nik" name="nik"
+                                    <input type="text" class="form-control" id="nik" name="nik"
                                         value="{{ old('nik') }}">
 
                                     @error('nik')
@@ -63,7 +63,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="address" class="form-label">Address</label>
-                                <textarea class="form-control" id="address" rows="2"></textarea>
+                                <textarea class="form-control" id="address" name="address" rows="2"></textarea>
                                 @error('address')
                                     {{ $message }}
                                 @enderror

@@ -11,7 +11,7 @@
                 </h5>
             </div>
             <div class="card-body">
-                <form action="/users/edit/{{ $user->id }}" method="POST">
+                <form action="/admins/edit/{{ $user->id }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="form-group mb-3">
@@ -56,7 +56,7 @@
                             
                         </div>
                         <input type="text" class="form-control" id="role" name="role"
-                            value="3" hidden>
+                            value="1" hidden>
                     <div class="justify-content-end d-flex">
                         <a href="/users" class="btn btn-warning back-button me-2"><span>Back</span></a>
                         <button type="submit" class="btn btn-primary add-button "><span>Submit</span></button>

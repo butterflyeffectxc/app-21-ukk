@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Borrowing;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -19,6 +20,7 @@ class BookController extends Controller
     {
         return view('books.detail', compact('book'));
     }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -27,7 +29,7 @@ class BookController extends Controller
         $categories = Category::all();
         return view('books.create', compact('categories'));
     }
-
+    
     /**
      * Store a newly created resource in storage.
      */

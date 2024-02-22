@@ -15,25 +15,25 @@
                             <img src="{{ asset('assets/book-lover.svg') }}" alt="" width="200" class="pb-3">
                         </div>
                         <div class="col-12 col-md-8">
-                            <h4>Title</h4>
+                            <h4>{{ $user->name }}</h4>
                             <div class="table-responsive">
                                 <table class="table table-hover p-0 m-0">
                                     <tbody>
                                         <tr>
-                                            <th class="text-bold-500">Name</th>
-                                            <td>Fiction</td>
+                                            <th class="text-bold-500">NIK</th>
+                                            <td>{{ $user->nik }}</td>
                                         </tr>
                                         <tr>
                                             <th class="text-bold-500">Email</th>
-                                            <td>Fiction</td>
+                                            <td>{{ $user->email }}</td>
                                         </tr>
                                         <tr>
                                             <th class="text-bold-500">Telephone</th>
-                                            <td>Fiction</td>
+                                            <td>{{ $user->phone }}</td>
                                         </tr>
                                         <tr>
-                                            <th class="text-bold-500">Roles</th>
-                                            <td>Fiction</td>
+                                            <th class="text-bold-500">Active since</th>
+                                            <td>{{ $user->created_at ? $user->created_at : "12-05-2023" }}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -48,9 +48,7 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque eius
-                                                    veniam aspernatur assumenda quam itaque accusantium a repellat minima
-                                                    hic.</p>
+                                                <p>{{ $user->address}}</p>
                                             </td>
                                         </tr>
                                     </tbody>
