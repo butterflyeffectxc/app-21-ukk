@@ -33,7 +33,14 @@ p{
 }
 .login-bg{
   background-image: radial-gradient(#7D8BAD, #FFFFFF);
-  /* background-color: red; */
+  position: relative;
+}
+
+.login-card{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .bg-purple{
   background-color: #7D8BAD;

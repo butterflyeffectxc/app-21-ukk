@@ -18,8 +18,6 @@
                     <div class="form-group">
                         <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
                         <input type="text" name="book_id" value="{{ $review->book_id }}" hidden>
-                        {{-- {{ Auth::user()->id }}
-                        {{ $review->book_id }} --}}
                         <label for="rating">Header</label>
                         <select  class="form-control" id="rating" name="rating">
                             <option value="1">I really like this book!</option>

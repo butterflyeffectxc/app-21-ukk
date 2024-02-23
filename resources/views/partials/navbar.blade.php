@@ -20,7 +20,7 @@
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Collections</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/books">Books</a>
+                    <a class="dropdown-item" href="/user/books">Books</a>
                     <a class="dropdown-item" href="/book-categories">Category</a>
                     <a class="dropdown-item" href="/user/collections">Wishlist</a>
                 </div>

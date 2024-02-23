@@ -44,10 +44,10 @@
                             <div class="row justify-content-center">
                                 @foreach ($books as $book)
                                 <div class="col-6 col-md-3">
-                                    <img src="{{ asset('assets/book.png') }}" alt="cover" width="130" class="cover-img">
+                                    <img src="{{ $book->cover ? asset('storage/'. $book->cover) : asset('assets/book-undefined.png') }}" alt="book-cover" width="130" class="cover-img">
                                     <h5 class="bold pt-2">{{ $book->title }}</h5>
                                     <small> @foreach ($book->categories as $category)
-                                        {{ $category->name }},</small>
+                                        {{ $category->name }}, </small>
                                     @endforeach
                                     <div class="justify-content-center d-flex">
                                         <a type="button" href="/user/books/detail/{{ $book->id }}" class="btn btn-color btn-sm">Detail</a>
@@ -74,62 +74,36 @@
                 </div>
                 <div class="collection container">
                     <div class="row flex-row flex-nowrap">
-                        {{-- @if ($categories->isEmpty())
+                        @if ($collections->isEmpty())
                             <div class="col-12">
                                 <div class="text-center">
                                     <h4 class="bold">Data Not Found</h4>
                                 </div>
                             </div>
-                        @else --}}
+                        @else
                         <div class="container">
                             <div class="row justify-content-center">
-                                {{-- @foreach ($categories as $collection) --}}
+                                @foreach ($collections as $collection)
                                 <div class="col-6 col-md-3">
-                                    <img src="{{ asset('assets/book.png') }}" alt="cover" width="130"
-                                        class="cover-img">
-                                    <h5 class="bold pt-2">Title</h5>
-                                    <small>Category</small>
+                                    {{-- <p>{{ dd($collections) }}</p> --}}
+                                   <img src="{{ $collection->books->cover ? asset('storage/'. $collection->books->cover) : asset('assets/book-undefined.png') }}" alt="book-cover" width="130" class="cover-img">
+                                    <h5 class="bold pt-2">{{ $collection->books->title }}</h5>
+                                    <small>@foreach ($collection->books->categories as $category)
+                                        {{ $category->name }}, 
+                                @endforeach</small>
                                     <div class="justify-content-center d-flex">
-                                        <a type="button" href="/books/detail" class="btn btn-color btn-sm">Detail</a>
+                                        <a type="button" href="/user/books/detail/{{ $collection->book_id }}" class="btn btn-color btn-sm">Detail</a>
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-3">
-                                    <img src="{{ asset('assets/book.png') }}" alt="cover" width="130"
-                                        class="cover-img">
-                                    <h5 class="bold pt-2">Title</h5>
-                                    <small>Category</small>
-                                    <div class="justify-content-center d-flex">
-                                        <a type="button" href="/books/detail" class="btn btn-color btn-sm">Detail</a>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <img src="{{ asset('assets/book.png') }}" alt="cover" width="130"
-                                        class="cover-img">
-                                    <h5 class="bold pt-2">Title</h5>
-                                    <small>Category</small>
-                                    <div class="justify-content-center d-flex">
-                                        <a type="button" href="/books/detail" class="btn btn-color btn-sm">Detail</a>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-3">
-                                    <img src="{{ asset('assets/book.png') }}" alt="cover" width="130"
-                                        class="cover-img">
-                                    <h5 class="bold pt-2">Title</h5>
-                                    <small>Category</small>
-                                    <div class="justify-content-center d-flex">
-                                        <a type="button" href="/books/detail" class="btn btn-color btn-sm">Detail</a>
-                                    </div>
-                                </div>
-
-                                {{-- @endforeach --}}
+                                @endforeach
                                 <div class="d-flex align-items-center">
-                                    <a href="" class="icon-link">
+                                    <a href="/user/collections" class="icon-link">
                                         <i class="bi bi-chevron-compact-right"></i>
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        {{-- @endif --}}
+                        @endif
                     </div>
                 </div>
             </div>
@@ -146,7 +120,7 @@
                         <p>Dive into a vast collection of books covering every genre imaginable. Whether you're into
                             fiction,
                             non-fiction, mystery, or romance, we've got something for everyone.</p>
-                        <a href="/user/category" class="btn btn-color">Search</a>
+                        <a href="/user/books#search" class="btn btn-color">Search</a>
                     </div>
                 </div>
             </div>

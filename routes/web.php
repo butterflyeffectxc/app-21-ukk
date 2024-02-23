@@ -91,11 +91,13 @@ Route::get('/landing', [ViewController::class, "landing"]);
 Route::get('/user-dashboard', [ViewController::class, "dashboard"]);
 Route::get('/user/books/detail/{book:id}', [ViewController::class, "getById"]);
 Route::get('/user/books', [ViewController::class, "index"]);
+Route::post('/user/books/search', [ViewController::class, "search"]);
 // User - Review
 Route::post('/reviews/create/{book:id}', [ReviewController::class, "store"]);
 Route::get('/reviews/edit/{review:id}', [ReviewController::class, "edit"]);
 Route::put('/reviews/edit/{review:id}', [ReviewController::class, "update"]);
 Route::delete('/reviews/delete/{review:id}', [ReviewController::class, "destroy"]);
 // User - Collection
+Route::get('/user/collections', [CollectionController::class, "index"]);
 Route::post('/collections/create/{book:id}', [CollectionController::class, "store"]);
 Route::delete('/collections/delete/{id}', [CollectionController::class, "destroy"]);

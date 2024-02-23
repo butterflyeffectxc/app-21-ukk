@@ -14,7 +14,10 @@ class CollectionController extends Controller
      */
     public function index()
     {
-        //
+        $userId = Auth::user()->id;
+        $collections = Collection::where('user_id', $userId)->with(['books', 'books.categories'])->get();
+        dd($collections);
+        return view('collections.index', compact('collections'));
     }
 
     /**

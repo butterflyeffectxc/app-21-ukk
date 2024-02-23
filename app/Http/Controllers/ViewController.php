@@ -18,8 +18,9 @@ class ViewController extends Controller
     public function dashboard() {
         $userId = Auth::user()->id;
         $books = Book::paginate(3);
-        // $collections = Collection::where('user_id', $userId)->pluck('book_id')->get();
-        return view('dashboard.user', compact('books'));
+        // $bookId = Collection::where('user_id', $userId)->pluck('book_id')->toArray();
+        $collections = Collection::where('user_id', $userId)->with(['books', 'books.categories'])->get();
+        return view('dashboard.user', compact('books', 'collections'));
     }
     public function index()
     {
@@ -35,6 +36,12 @@ class ViewController extends Controller
         $collection = Collection::where('user_id', $userId)->where('book_id', $book->id)->first();
         // dd($collection);
         return view('user-books.detail', compact('book', 'reviews', 'collection', 'reviewId'));
+    }
+
+    public function search(Request $request) {
+        $bookSearch = Book::where('title', 'LIKE', '%'. $request['title'].'%')->get();
+        // dd($bookSearch);
+        return view('user-books.search', compact('bookSearch'));
     }
     
 }

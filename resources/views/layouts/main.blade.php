@@ -23,7 +23,12 @@
 <body>
     <div class="my-font">
         @include('partials.navbar')
+        {{-- @if (Auth::user()) --}}
         @yield('content')
+        {{-- @else
+        <p>Log in First</p>
+        <a href="/login" class="btn btn-color"></a>
+        @endif --}}
         @include('partials.footer')
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
