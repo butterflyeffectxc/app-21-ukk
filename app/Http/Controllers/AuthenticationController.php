@@ -24,9 +24,9 @@ class AuthenticationController extends Controller
             $request->session()->regenerate();
             $roles = Auth::user()->role;
             if ($roles == '1'){
-                return redirect('/categories');
+                return redirect('/books');
             } elseif ($roles == '2'){
-                return redirect('/categories');
+                return redirect('/books');
             } else {
                 return redirect()->intended('/user-dashboard');
             }

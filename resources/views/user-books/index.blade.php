@@ -15,40 +15,18 @@
         <div class="background-dashboard justify-content-between d-flex vh-auto mt-5 ">
             <div class="container py-2">
                 <div class="row justify-content-center">
-                    {{-- @foreach ($data as $book) --}}
+                    @foreach ($books as $book)
                     <div class="col-6 col-md-3 pb-5">
                         <img src="{{ asset('assets/book.png') }}" alt="cover" width="130">
-                        <h5 class="pt-2">title</h5>
-                        <small>Category</small>
+                        <h5 class="pt-2">{{ $book->title }}</h5>
+                        <small>@foreach ($book->categories as $category)
+                            {{ $category->name }},
+                        @endforeach</small>
                         <div class="justify-content-center d-flex">
-                            <a type="button" href="/user/books/detail" class="btn btn-color btn-sm">Detail</a>
+                            <a type="button" href="/user/books/detail/{{ $book->id }}" class="btn btn-color btn-sm">Detail</a>
                         </div>
                     </div>
-                    <div class="col-6 col-md-3">
-                        <img src="{{ asset('assets/book.png') }}" alt="cover" width="130">
-                        <h5 class="pt-2">title</h5>
-                        <small>Category</small>
-                        <div class="justify-content-center d-flex">
-                            <a type="button" href="/user/books/detail" class="btn btn-color btn-sm">Detail</a>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <img src="{{ asset('assets/book.png') }}" alt="cover" width="130">
-                        <h5 class="pt-2">title</h5>
-                        <small>Category</small>
-                        <div class="justify-content-center d-flex">
-                            <a type="button" href="/user/books/detail" class="btn btn-color btn-sm">Detail</a>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <img src="{{ asset('assets/book.png') }}" alt="cover" width="130">
-                        <h5 class="pt-2">title</h5>
-                        <small>Category</small>
-                        <div class="justify-content-center d-flex">
-                            <a type="button" href="/user/books/detail" class="btn btn-color btn-sm">Detail</a>
-                        </div>
-                    </div>
-                    {{-- @endforeach --}}
+                    @endforeach
                     </adiv>
                 </div>
             </div>

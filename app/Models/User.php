@@ -45,4 +45,10 @@ class User extends Authenticatable
     public function borrowings() {
         return $this->hasOne(Borrowing::class, 'id', 'user_id');
     }
+    public function collections() {
+        return $this->hasOne(Collection::class, 'id', 'user_id');
+    }
+    public function reviews() {
+        return $this->hasOne(Review::class, 'id', 'user_id');
+    }
 }

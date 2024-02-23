@@ -6,7 +6,9 @@ use App\Http\Controllers\BorrowingController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\OperatorController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ViewController;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\Framework\Constraint\Operator;
 
@@ -84,3 +86,16 @@ Route::post('/collections/create', [CollectionController::class, "store"]);
 Route::get('/collections/edit/{user:id}', [CollectionController::class, "edit"]);
 Route::put('/collections/edit/{user:id}', [CollectionController::class, "update"]);
 Route::delete('/collections/delete/{user:id}', [CollectionController::class, "destroy"]);
+// User - View
+Route::get('/landing', [ViewController::class, "landing"]);
+Route::get('/user-dashboard', [ViewController::class, "dashboard"]);
+Route::get('/user/books/detail/{book:id}', [ViewController::class, "getById"]);
+Route::get('/user/books', [ViewController::class, "index"]);
+// User - Review
+Route::post('/reviews/create/{book:id}', [ReviewController::class, "store"]);
+Route::get('/reviews/edit/{review:id}', [ReviewController::class, "edit"]);
+Route::put('/reviews/edit/{review:id}', [ReviewController::class, "update"]);
+Route::delete('/reviews/delete/{review:id}', [ReviewController::class, "destroy"]);
+// User - Collection
+Route::post('/collections/create/{book:id}', [CollectionController::class, "store"]);
+Route::delete('/collections/delete/{id}', [CollectionController::class, "destroy"]);

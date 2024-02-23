@@ -90,7 +90,8 @@ p{
 
 .btn-color-light{
     background-color: #F1B2B2 !important;
-    color: black ;
+    color: black !important;
+    border: none;
 }
 
 .add-button{

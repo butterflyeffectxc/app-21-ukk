@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Borrowing;
 use App\Models\Category;
+use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -18,7 +19,7 @@ class BookController extends Controller
 
     public function getById(Book $book)
     {
-        return view('books.detail', compact('book'));
+        return view('books.detail', compact('book', 'reviews'));
     }
 
     /**

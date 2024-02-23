@@ -32,43 +32,37 @@
                     <h4 class="bold">Book List</h4>
                 </div>
                 <div class="book container">
-                    {{-- <div class="row flex-row flex-nowrap">
-                        @if ($data->isEmpty())
+                    <div class="row flex-row flex-nowrap">
+                        @if ($books->isEmpty())
                         <div class="col-12">
                             <div class="text-center">
                                 <h4 class="bold">Data Not Found</h4>
                             </div>
-                        </div> --}}
-                    {{-- @else --}}
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            {{-- @foreach ($data as $book) --}}
-                            <div class="col-6 col-md-3">
-                                <img src="{{ asset('assets/book.png') }}" alt="cover" width="130" class="cover-img">
-                                <h5 class="bold pt-2">Title</h5>
-                                <small>Category</small>
-                                <div class="justify-content-center d-flex">
-                                    <a type="button" href="/books/detail" class="btn btn-color btn-sm">Detail</a>
+                        </div>
+                        @else
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                @foreach ($books as $book)
+                                <div class="col-6 col-md-3">
+                                    <img src="{{ asset('assets/book.png') }}" alt="cover" width="130" class="cover-img">
+                                    <h5 class="bold pt-2">{{ $book->title }}</h5>
+                                    <small> @foreach ($book->categories as $category)
+                                        {{ $category->name }},</small>
+                                    @endforeach
+                                    <div class="justify-content-center d-flex">
+                                        <a type="button" href="/user/books/detail/{{ $book->id }}" class="btn btn-color btn-sm">Detail</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{ asset('assets/book.png') }}" alt="cover" width="130" class="cover-img">
-                                <h5 class="bold pt-2">Title</h5>
-                                <small>Category</small>
-                                <div class="justify-content-center d-flex">
-                                    <a type="button" href="/books/detail" class="btn btn-color btn-sm">Detail</a>
+                                @endforeach
+                                <div class="d-flex align-items-center">
+                                    <a href="/user/books" class="icon-link">
+                                        <i class="bi bi-chevron-compact-right"></i>
+                                    </a>
                                 </div>
-                            </div>
-                            {{-- @endforeach --}}
-                            <div class="d-flex align-items-center">
-                                <a href="/user/books" class="icon-link">
-                                    <i class="bi bi-chevron-compact-right"></i>
-                                </a>
                             </div>
                         </div>
+                        @endif
                     </div>
-                    {{-- @endif --}}
-                    {{-- </div> --}}
                 </div>
             </div>
             <div class="category-list py-5 h-auto">

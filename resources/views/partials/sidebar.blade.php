@@ -80,8 +80,11 @@
 
                     <ul class="submenu">
                         <li class="submenu-item">
+                            <form action="/logout" method="POST">
+                                @csrf
                             <button type="submit" class="submenu-link btn-sm btn pl-2"><i
                                     class="bi bi-box-arrow-left pr-2"></i>Logout</button>
+                            </form>
                         </li>
                         <li class="submenu-item">
                             <a href="/users" class="submenu-link">Data User</a>

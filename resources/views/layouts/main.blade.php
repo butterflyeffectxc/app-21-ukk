@@ -17,7 +17,7 @@
     <link rel="stylesheet" media="screen and (min-width: 320px) and (max-width: 767px)"
         href="{{ asset('assets/css/app2.css') }}">
 
-    <title>Hello, world!</title>
+    <title>Bookify</title>
 </head>
 
 <body>

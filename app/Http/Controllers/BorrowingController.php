@@ -59,19 +59,6 @@ class BorrowingController extends Controller
         return redirect('/borrowings');
     }
 
-    /**
-     * Display the specified resource.
-     */
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    // public function edit(Borrowing $borrowing)
-    // {
-    //     $users = User::where('status', 3)->get();
-    //     $books = Book::all();
-    //     return view('borrowings.edit', compact('users', 'books'));
-    // }
 
     /**
      * Update the specified resource in storage.

@@ -18,6 +18,13 @@ class Book extends Model
     }
     
     public function borrowings() {
-        return $this->hasOne(Borrowing::class, 'id', 'user_id');
+        return $this->hasOne(Borrowing::class, 'id', 'book_id');
+    }
+
+    public function collections() {
+        return $this->hasOne(Collection::class, 'id', 'book_id');
+    }
+    public function reviews() {
+        return $this->hasOne(Review::class, 'id', 'book_id');
     }
 }

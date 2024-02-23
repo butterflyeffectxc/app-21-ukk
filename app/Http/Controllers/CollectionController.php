@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CollectionController extends Controller
 {
@@ -26,9 +28,21 @@ class CollectionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Book $book)
     {
-        //
+        // dd('masuk');
+        // return 'masuk';
+        // $data = $request->validate([
+        //     'user_id' => 'required',
+        //     'book_id' => 'required',
+        // ]);
+        // dd($request);
+        $user_id = Auth::user()->id;
+        Collection::create([
+            'user_id' => $user_id,
+            'book_id' => $book->id
+        ]);
+        return redirect()->back();
     }
 
     /**
@@ -58,8 +72,10 @@ class CollectionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Collection $collection)
+    public function destroy($id)
     {
-        //
+        $collection = Collection::findOrFail($id);
+        $collection->delete();
+        return redirect()->back();
     }
 }
