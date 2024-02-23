@@ -3,12 +3,13 @@
     <div class="vh-100">
         <div class="container px-0 pt-5 d-flex justify-content-between">
             <h4 class="p-3 bold">Book List</h4>
-            <div class="ml-auto">
+
+            <div class="row ml-auto">
                 <form action="/user/books/category/search" method="POST">
                     @csrf
-                    <div class="form-row py-3">
+                    <div class="form-row py-3 mr-3">
                         <div class="col">
-                            <button class="btn btn-color dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-color dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false" id="filterCategory">
                                 Pick Category
                               </button>
                               <div class="dropdown-menu">
@@ -17,9 +18,9 @@
                                 @endforeach
                               </div>
                         </div>
-                        <div class="col">
+                        {{-- <div class="col">
                             <button class="btn btn-color" type="submit"><i class="bi bi-search"></i></button>
-                        </div>
+                        </div> --}}
                     </div>
                 </form>
                 <form action="/user/books/search" method="POST">

@@ -19,7 +19,7 @@ class ViewController extends Controller
     
     public function dashboard() {
         $userId = Auth::user()->id;
-        $books = Book::paginate(3);
+        $books = Book::paginate(4);
         // $bookId = Collection::where('user_id', $userId)->pluck('book_id')->toArray();
         $collections = Collection::where('user_id', $userId)->with(['books', 'books.categories'])->get();
         return view('dashboard.user', compact('books', 'collections'));

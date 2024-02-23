@@ -120,7 +120,7 @@
                         <p>Dive into a vast collection of books covering every genre imaginable. Whether you're into
                             fiction,
                             non-fiction, mystery, or romance, we've got something for everyone.</p>
-                        <a href="/user/books#search" class="btn btn-color">Search</a>
+                        <a href="/user/books#filterCategory" class="btn btn-color">Search</a>
                     </div>
                 </div>
             </div>
