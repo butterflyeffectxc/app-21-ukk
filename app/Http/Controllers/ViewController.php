@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Category;
 use App\Models\Collection;
 use App\Models\Review;
 use Illuminate\Http\Request;
@@ -38,10 +39,16 @@ class ViewController extends Controller
         return view('user-books.detail', compact('book', 'reviews', 'collection', 'reviewId'));
     }
 
-    public function search(Request $request) {
-        $bookSearch = Book::where('title', 'LIKE', '%'. $request['title'].'%')->get();
+    public function searchBook(Request $request) {
+        $bookSearch = Book::where('title', 'LIKE', '%'. $request['input'].'%')->get();
         // dd($bookSearch);
         return view('user-books.search', compact('bookSearch'));
+    }
+    public function searchCategory(Request $request) {
+        // $bookSearch = Book::where('title', 'LIKE', '%'. $request['input'].'%')->get();
+        $categorySearch = Category::where('name', 'LIKE', '%'. $request['input'].'%')->get();
+        dd($categorySearch);
+        return view('user-books.category-search', compact('categorySearch'));
     }
     
 }

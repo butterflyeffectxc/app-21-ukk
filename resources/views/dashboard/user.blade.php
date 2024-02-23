@@ -77,7 +77,7 @@
                         @if ($collections->isEmpty())
                             <div class="col-12">
                                 <div class="text-center">
-                                    <h4 class="bold">Data Not Found</h4>
+                                    <h4 class="bold text-muted">Add Book to your Wishlist and your Books will Appear Here.</h4>
                                 </div>
                             </div>
                         @else

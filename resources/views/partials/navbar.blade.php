@@ -21,7 +21,7 @@
                     aria-haspopup="true" aria-expanded="false">Collections</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/user/books">Books</a>
-                    <a class="dropdown-item" href="/book-categories">Category</a>
+                    {{-- <a class="dropdown-item" href="/book-categories">Category</a> --}}
                     <a class="dropdown-item" href="/user/collections">Wishlist</a>
                 </div>
             </li>
@@ -29,7 +29,7 @@
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Profile</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/books">About</a>
+                    <a class="dropdown-item" href="/user/profile/{{ Auth::user()->id }}">About</a>
                     <form action="/logout" method="POST">
                         @csrf
                         <button class="dropdown-item" type="submit">Logout</button>

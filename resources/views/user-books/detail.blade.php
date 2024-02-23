@@ -135,6 +135,13 @@
                                 <h4 class="card-title">What Other said About <span class="text-pink">{{ $book->title }}</span>?</h4>
                             </div>
                             <div class="card-body">
+                                @if ($reviews->isEmpty())
+                                    <div class="col-12">
+                                        <div class="text-center">
+                                            <h5 class=" text-muted">There is no Reviews for now...</h5>
+                                        </div>
+                                    </div>
+                                @else
                                 @foreach ($reviews as $review)
                                     <div class="card my-3">
                                         <div class="container comment">
@@ -167,6 +174,7 @@
                                         </div>
                                     </div>
                                 @endforeach
+                                @endif
                             </div>
                         </div>
                     </div>

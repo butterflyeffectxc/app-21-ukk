@@ -6,11 +6,13 @@ use App\Http\Controllers\BorrowingController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\OperatorController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ViewController;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\Framework\Constraint\Operator;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 /*
 |--------------------------------------------------------------------------
@@ -91,7 +93,8 @@ Route::get('/landing', [ViewController::class, "landing"]);
 Route::get('/user-dashboard', [ViewController::class, "dashboard"]);
 Route::get('/user/books/detail/{book:id}', [ViewController::class, "getById"]);
 Route::get('/user/books', [ViewController::class, "index"]);
-Route::post('/user/books/search', [ViewController::class, "search"]);
+Route::post('/user/books/search', [ViewController::class, "searchBook"]);
+Route::post('/user/books/category/search', [ViewController::class, "searchCategory"]);
 // User - Review
 Route::post('/reviews/create/{book:id}', [ReviewController::class, "store"]);
 Route::get('/reviews/edit/{review:id}', [ReviewController::class, "edit"]);
@@ -101,3 +104,8 @@ Route::delete('/reviews/delete/{review:id}', [ReviewController::class, "destroy"
 Route::get('/user/collections', [CollectionController::class, "index"]);
 Route::post('/collections/create/{book:id}', [CollectionController::class, "store"]);
 Route::delete('/collections/delete/{id}', [CollectionController::class, "destroy"]);
+// User -Profile
+Route::get('/user/profile/{user:id}', [ProfileController::class, "getById"]);
+Route::get('/user/profile/edit/{user:id}', [ProfileController::class, "edit"]);
+Route::put('/user/profile/edit/{user:id}', [ProfileController::class, "update"]);
+// Route::delete('/user/profile/delete/{user:id}', [ProfileController::class, "destroy"]);

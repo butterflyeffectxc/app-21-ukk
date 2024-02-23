@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\Borrowing;
 use App\Models\Category;
+use App\Models\CategoryDetail;
 use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -69,7 +70,8 @@ class BookController extends Controller
     public function edit(Book $book)
     {
         $categories = Category::all();
-        return view('books.edit', compact('categories', 'book'));
+        $categoryDetail = $book->categoryDetails;
+        return view('books.edit', compact('categories', 'book', 'categoryDetail'));
     }
 
     /**
@@ -89,12 +91,11 @@ class BookController extends Controller
             'description' => 'nullable',
             'categories' => 'required'
         ]);
-
         if($request['cover']){
-            $book = Storage::delete($book->cover);
+            if($book->cover) $book = Storage::delete($book->cover);
             $cover = $request->file('cover')->store('book-cover');
             $data['cover'] = $cover;
-        }
+        } 
 
         $book->update($data);
         $book->categories()->sync($request['categories']);

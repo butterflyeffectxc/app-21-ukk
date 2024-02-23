@@ -73,11 +73,13 @@
                         <label for="categories" class="form-label">Category</label>
                         <select class="choices form-select multiple-remove" name="categories[]" multiple="multiple">
                             @foreach ($categories as $category)
-                            <option value="{{ $category->id }}" @foreach ($category as $categoryBook)
-                                @if ($categoryBook == $book->id)
+                            <option value="{{ $category->id }}" 
+                                @foreach ($categoryDetail as $categoryBook)
+                                @if ($categoryBook->category_id == $category->id)
                                     selected
                                 @endif
-                            @endforeach>{{ $category->name }}</option>
+                                @endforeach>{{ $category->name }}
+                            </option>
                             @endforeach
                         </select>
                         {{-- <input type="numeric" class="form-control" id="categories" name="categories" value="{{ old('categories')}}"> --}}
@@ -87,8 +89,7 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="description">Description</label>
-                        <textarea class="form-control" id="description" rows="3" name="description">{{ old('description', $book->description ) }}
-                        </textarea>
+                        <textarea class="form-control" id="description" rows="3" name="description">{{ old('description', $book->description ) }}</textarea>
                       </div>
                     <div class="form-group mb-3">
                         <label for="cover" class="form-label">Cover:</label>

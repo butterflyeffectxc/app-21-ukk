@@ -3,17 +3,30 @@
     <div class="vh-100">
         <div class="container px-0 pt-5 d-flex justify-content-between">
             <h4 class="p-3 bold">Book List</h4>
-            <form action="/user/books/search" method="POST">
-                @csrf
-                <div class="form-row py-3">
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="Search" name="title" id="search">
+            <div class="ml-auto">
+                {{-- <form action="/user/books/category/search" method="POST">
+                    @csrf
+                    <div class="form-row py-3">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Search Category" name="input" id="search">
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-color" type="submit"><i class="bi bi-search"></i></button>
+                        </div>
                     </div>
-                    <div class="col">
-                        <button class="btn btn-color" type="submit"><i class="bi bi-search"></i></button>
+                </form> --}}
+                <form action="/user/books/search" method="POST">
+                    @csrf
+                    <div class="form-row py-3">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Search Book" name="input" id="search">
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-color" type="submit"><i class="bi bi-search"></i></button>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
         <div class="background-dashboard justify-content-between d-flex vh-100 mt-5 ">
             <div class="container py-2">

@@ -13,67 +13,56 @@
                         </div>
                     </div>
                     <div class="card-body mt-3">
-                        <form action="/users/edit" method="POST">
+                        <form action="/user/profile/edit/{{ $user->id }}" method="POST">
                             @csrf
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Nama</label>
-                                <input type="name" class="form-control" id="name" name="name"
-                                    {{-- value="{{ old('author', $user->name) }}"> --}}>
-                                {{-- @error('name')
+                            @method('PUT')
+                            <div class="form-group mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" autofocus value="{{ old('name',$user->name) }}">
+        
+                                @error('name')
                                     {{ $message }}
-                                @enderror --}}
+                                @enderror
                             </div>
-                            <div class="form-row">
-                                <div class="mb-3 form-group col-md-6">
-                                    <label for="email" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="email" name="email"
-                                        value="{{ old('email') }}">
-
-                                    {{-- @error('email')
-                                        {{ $message }}
-                                    @enderror --}}
-                                </div>
-                                <div class="mb-3 form-group col-md-6">
-                                    <label for="password" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="password" name="password"
-                                        value="{{ old('password') }}">
-
-                                    {{-- @error('password')
-                                        {{ $message }}
-                                    @enderror --}}
-                                </div>
+                            <div class="form-group mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" value="{{ old('email',$user->email) }}">
+                                
+                                @error('email')
+                                {{ $message }}
+                                @enderror
                             </div>
-                            <div class="form-row">
-                                <div class="mb-3 form-group col-md-6">
-                                    <label for="phone" class="form-label">Phone Number</label>
-                                    <input type="phone" class="form-control" id="phone" name="phone"
-                                        value="{{ old('phone') }}">
-
-                                    {{-- @error('phone')
-                                        {{ $message }}
-                                    @enderror --}}
-                                </div>
-                                <div class="mb-3 form-group col-md-6">
-                                    <label for="nik" class="form-label">NIK</label>
-                                    <input type="nik" class="form-control" id="nik" name="nik"
-                                        value="{{ old('nik') }}">
-
-                                    {{-- @error('nik')
-                                        {{ $message }}
-                                    @enderror --}}
-                                </div>
+                            <div class="form-group mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" >
+        
+                                @error('password')
+                                    {{ $message }}
+                                @enderror
                             </div>
-                            <div class="mb-3">
+                            <div class="form-group mb-3">
+                                <label for="phone" class="form-label">Telephone</label>
+                                <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone',$user->phone) }}">
+                                @error('phone')
+                                {{ $message }}
+                            @enderror
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="nik" class="form-label">NIK</label>
+                                <input type="text" class="form-control" id="nik" name="nik" value="{{ old('nik',$user->nik) }}">
+                                @error('nik')
+                                {{ $message }}
+                                @enderror
+                            </div>
+                            <div class="form-group mb-3">
                                 <label for="address" class="form-label">Address</label>
-                                <textarea class="form-control" id="address" rows="2"></textarea>
-                                {{-- @error('address')
-                                    {{ $message }}
-                                @enderror --}}
-                            </div>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" id="role" name="role" value="3"
-                                    hidden>
-                            </div>
+                                <textarea class="form-control" id="address" rows="2" name="address">{{ old('address',$user->address) }}</textarea>
+                                @error('address')
+                                {{ $message }}
+                            @enderror
+                        </div>
+                        <input type="text" class="form-control" id="role" name="role" value="3" hidden>
+                            <div class="form-group mb-3">
                             <div class="justify-content-center d-flex">
                                 <button type="submit" class="btn btn-color next-button">Submit</button>
                             </div>

@@ -4,14 +4,17 @@
         <div class="container my-5 ">
             <div class="d-flex pt-5 justify-content-between">
                 <h4 class="p-3 bold"><span class="text-pink">{{ Auth::user()->name }}</span> Wishlist</h4>
-                <div class="form-row">
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="Search">
+                <form action="/user/books/search" method="POST">
+                    @csrf
+                    <div class="form-row py-3">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Search Book" name="input" id="search">
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-color" type="submit"><i class="bi bi-search"></i></button>
+                        </div>
                     </div>
-                    <div class="col">
-                        <button class="btn btn-color" type="submit"><i class="bi bi-search"></i></button>
-                    </div>
-                </div>
+                </form>
             </div>
             <div class=" justify-content-between d-flex vh-100 mt-5 p-0">
                 <div class="container">

@@ -3,54 +3,30 @@
     <div class="background-main">
         <div class="py-5">
             <div class="container">
-                {{-- <div class="page-content"> --}}
                 <div class="card p-3">
-                    <div class="container">
-
-                    </div>
-                    {{-- <div class="card-header">
-                    </div> --}}
                     <div class="card-body mt-5">
                         <div class="container book-detail">
                             <div class="row">
-                                <div class="col-12 col-md-4">
-                                    <img src="{{ asset('assets/book.png') }}" alt="" width="200">
-                                    {{-- <div class="card">
-                                        <div class="card-header">
-                                            <h4 class="card-title">Basic Rating</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <div id="basic"></div>
-                                        </div>
-                                    </div> --}}
-                                    {{-- <div class="container mt-3">
-                                        <input type="checkbox" id="rating" class="hidden-checkbox">
-                                        <label for="rating" class="heart-icon">
-                                            <i class="bi bi-heart"></i>
-                                            <i class="bi bi-heart-fill"></i>
-                                            <span>Add to Wishlist</span>
-                                        </label>
-                                    </div> --}}
-
-
+                                <div class="col-12 col-md-4 text-center">
+                                    <img src="{{ asset('assets/book-lover.svg') }}" alt="" width="200">
                                 </div>
                                 <div class="col-12 col-md-8">
-                                    <h4 class="pb-3 bold">Your Profile</h4>
-                                    <h4 class="text-pink">Name</h4>
+                                    <h4 class="py-3 bold">Your Profile</h4>
+                                    <h4 class="text-pink">{{ $user->name }}</h4>
                                     <div class="table-responsive">
                                         <table class="table table-hover p-0 m-0">
                                             <tbody>
                                                 <tr>
                                                     <th class="text-bold-500 pl-0">NIK</th>
-                                                    <td>937798298497</td>
+                                                    <td>{{ $user->nik }}</td>
                                                 </tr>
                                                 <tr>
                                                     <th class="text-bold-500 pl-0">Phone</th>
-                                                    <td>Michael Right</td>
+                                                    <td>{{ $user->phone }}</td>
                                                 </tr>
                                                 <tr>
                                                     <th class="text-bold-500 pl-0">Email</th>
-                                                    <td>Gramedia</td>
+                                                    <td>{{ $user->email }}</td>
                                                 </tr>
                                                 {{-- <tr>
                                                     <th class="text-bold-500 pl-0">Address</th>
@@ -81,11 +57,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="pl-0">
-                                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque
-                                                            eius
-                                                            veniam aspernatur assumenda quam itaque accusantium a repellat
-                                                            minima
-                                                            hic.</p>
+                                                        <p>{{ $user->address }}</p>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -95,9 +67,9 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-end">
-                            <a href="/profile/edit-password/id" class="btn btn-color-light next-button mr-2"><span>Edit
-                                    Password</span></a>
-                            <a href="/profile/edit/id" class="btn btn-color next-button mr-2"><span>Edit Profile</span></a>
+                            {{-- <a href="/profile/edit-password/id" class="btn btn-color-light next-button mr-2"><span>Edit
+                                    Password</span></a> --}}
+                            <a href="/user/profile/edit/{{ $user->id }}" class="btn btn-color next-button mr-2"><span>Edit Profile</span></a>
                             <a href="/user/books" class="btn btn-warning back-button"><span>Back</span></a>
                         </div>
                     </div>

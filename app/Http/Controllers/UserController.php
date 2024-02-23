@@ -64,17 +64,25 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $data = $request->validate([
+        $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'password' => 'required',
+            // 'password' => 'required',
             'nik' => 'required',
             'phone' => 'required',
             'address' => 'required',
             'role' => 'required',
         ]);
-
-        $user->update($data);
+        $item = $user;
+        $item->name = $request['name'];
+        $item->email = $request['email'];
+        $item->nik = $request['nik'];
+        $item->phone = $request['phone'];
+        $item->address = $request['address'];
+        $item->role = $request['role'];
+        if($request->has('password') && $request['password'] != '')
+        $item->password = $request->has('password') && $request['password'] != '';
+        $item->save();
         return redirect('/users');
     }
 

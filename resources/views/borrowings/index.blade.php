@@ -12,7 +12,7 @@
                     </h5>
                     <div class="ml-auto">
                         <a href="/borrowings/create" class="btn btn-primary add-button"><span>Add Data</span></a>
-                        <a href="/reports/generate/all" class="btn btn-warning back-button"><span>Import Data</span></a>
+                        <a href="/reports/generate/all" class="btn btn-warning back-button"><span>Generate Report</span></a>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,8 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $borrowing->users->name }}</td>
-                                    <td>{{ $borrowing->books->title }}</td>
+                                    {{-- <td>{{ dd($borrowing->books->title) }}</td> --}}
+                                    <td>{{ $borrowing->books->title ?? '' }}</td>
                                     <td>{{ $borrowing->start_date }}</td>
                                     <td>{{ $borrowing->end_date }}</td>
                                     <td>    @if ($borrowing->status == 0)

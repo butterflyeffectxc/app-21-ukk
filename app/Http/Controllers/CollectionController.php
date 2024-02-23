@@ -16,30 +16,14 @@ class CollectionController extends Controller
     {
         $userId = Auth::user()->id;
         $collections = Collection::where('user_id', $userId)->with(['books', 'books.categories'])->get();
-        dd($collections);
         return view('collections.index', compact('collections'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Book $book)
     {
-        // dd('masuk');
-        // return 'masuk';
-        // $data = $request->validate([
-        //     'user_id' => 'required',
-        //     'book_id' => 'required',
-        // ]);
-        // dd($request);
         $user_id = Auth::user()->id;
         Collection::create([
             'user_id' => $user_id,

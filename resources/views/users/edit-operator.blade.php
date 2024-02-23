@@ -11,7 +11,7 @@
                 </h5>
             </div>
             <div class="card-body">
-                <form action="/users/edit/{{ $user->id }}" method="POST">
+                <form action="/operators/edit/{{ $user->id }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="form-group mb-3">
@@ -50,15 +50,12 @@
                         </div>
                         <div class="form-group mb-3">
                             <label for="address" class="form-label">Address</label>
-                            <textarea class="form-control" id="address" rows="2" name="address">
-                                {{ old('phone',$user->address) }}
-                            </textarea>
-                            
+                            <textarea class="form-control" id="address" rows="2" name="address">{{ old('address',$user->address) }}</textarea>
                         </div>
                         <input type="text" class="form-control" id="role" name="role"
                             value="2" hidden>
                     <div class="justify-content-end d-flex">
-                        <a href="/users" class="btn btn-warning back-button me-2"><span>Back</span></a>
+                        <a href="/operators" class="btn btn-warning back-button me-2"><span>Back</span></a>
                         <button type="submit" class="btn btn-primary add-button "><span>Submit</span></button>
                     </div>
                 </form>

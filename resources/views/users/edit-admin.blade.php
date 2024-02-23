@@ -50,10 +50,7 @@
                         </div>
                         <div class="form-group mb-3">
                             <label for="address" class="form-label">Address</label>
-                            <textarea class="form-control" id="address" rows="2" name="address">
-                                {{ old('phone',$user->address) }}
-                            </textarea>
-                            
+                            <textarea class="form-control" id="address" rows="2" name="address">{{ old('address',$user->address) }}</textarea>
                         </div>
                         <input type="text" class="form-control" id="role" name="role"
                             value="1" hidden>
