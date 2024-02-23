@@ -6,6 +6,7 @@ use App\Models\Book;
 use App\Models\Category;
 use App\Models\Collection;
 use App\Models\Review;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,7 +27,8 @@ class ViewController extends Controller
     public function index()
     {
         $books = Book::all();
-        return view('user-books.index', compact('books'));
+        $categories = Category::all();
+        return view('user-books.index', compact('books', 'categories'));
     }
     public function getById(Book $book)
     {
@@ -45,10 +47,11 @@ class ViewController extends Controller
         return view('user-books.search', compact('bookSearch'));
     }
     public function searchCategory(Request $request) {
-        // $bookSearch = Book::where('title', 'LIKE', '%'. $request['input'].'%')->get();
-        $categorySearch = Category::where('name', 'LIKE', '%'. $request['input'].'%')->get();
-        dd($categorySearch);
-        return view('user-books.category-search', compact('categorySearch'));
+        $books = Book::whereHas('categoryDetails', function (Builder $query) use($request){
+            $query->where('category_id', 'like', $request['category']);
+        })->get();
+        // dd($books);
+        return view('user-books.category-search', compact('books'));
     }
     
 }

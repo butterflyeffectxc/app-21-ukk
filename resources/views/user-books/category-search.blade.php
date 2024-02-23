@@ -8,7 +8,7 @@
         <div class="background-dashboard justify-content-between d-flex h-100 mt-5 ">
             <div class="container py-2">
                 <div class="row justify-content-center">
-                    @foreach ($categorySearch as $book)
+                    @foreach ($books as $book)
                     <div class="col-6 col-md-3 pb-5">
                         <img src="{{ $book->cover ? asset('storage/'. $book->cover) : asset('assets/book-undefined.png') }}" alt="book-cover" width="130">
                         <h5 class="pt-2">{{ $book->title }}</h5>

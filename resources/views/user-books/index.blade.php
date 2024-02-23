@@ -4,17 +4,24 @@
         <div class="container px-0 pt-5 d-flex justify-content-between">
             <h4 class="p-3 bold">Book List</h4>
             <div class="ml-auto">
-                {{-- <form action="/user/books/category/search" method="POST">
+                <form action="/user/books/category/search" method="POST">
                     @csrf
                     <div class="form-row py-3">
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="Search Category" name="input" id="search">
+                            <button class="btn btn-color dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                                Pick Category
+                              </button>
+                              <div class="dropdown-menu">
+                                @foreach ($categories as $category)
+                                <button class="dropdown-item" type="submit" name="category" value="{{ $category->id }}">{{ $category->name }}</button>
+                                @endforeach
+                              </div>
                         </div>
                         <div class="col">
                             <button class="btn btn-color" type="submit"><i class="bi bi-search"></i></button>
                         </div>
                     </div>
-                </form> --}}
+                </form>
                 <form action="/user/books/search" method="POST">
                     @csrf
                     <div class="form-row py-3">
