@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-header mb-2">
                 <h5 class="card-title">
-                    Add Categories
+                    Add Genre
                 </h5>
             </div>
             <div class="card-body">

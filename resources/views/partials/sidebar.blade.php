@@ -58,7 +58,7 @@
                 <li class="sidebar-item {{ Request::is('categories') ? 'active' : '' }}">
                     <a href="{{ url('/categories') }}" class="sidebar-link">
                         <i class="bi bi-grid-fill"></i>
-                        <span>Category</span>
+                        <span>Genre</span>
                     </a>
                 </li>
                 <li class="sidebar-item {{ Request::is('borrowings') ? 'active' : '' }}">
@@ -89,9 +89,11 @@
                         <li class="submenu-item">
                             <a href="/users" class="submenu-link">Data User</a>
                         </li>
+                        @if (Auth::user()->role == 1)
                         <li class="submenu-item">
                             <a href="/operators" class="submenu-link">Data Operator</a>
                         </li>
+                        @endif
 
                         {{-- <li class="submenu-item">
                             <a href="/users" class="submenu-link">Operator</a>

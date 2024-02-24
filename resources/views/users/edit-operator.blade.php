@@ -40,13 +40,13 @@
                     </div>
                     <div class="form-group mb-3">
                         <label for="phone" class="form-label">Telephone</label>
-                        <input type="string" class="form-control" id="phone" name="phone" value="{{ old('phone',$user->phone) }}">
+                        <input type="string" class="form-control" id="phone" name="phone" value="{{ old('phone',$user->phone) }}" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 
                     </div>
                     <div class="form-group mb-3">
                         <label for="nik" class="form-label">NIK</label>
                         <input type="text" class="form-control" id="nik" name="nik"
-                            value="{{ old('nik', $user->nik) }}">
+                            value="{{ old('nik', $user->nik) }}" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                         </div>
                         <div class="form-group mb-3">
                             <label for="address" class="form-label">Address</label>

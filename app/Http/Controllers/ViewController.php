@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 class ViewController extends Controller
 {
     public function landing() {
-        $books = Book::paginate(4);
+        $books = Book::paginate(3);
         return view('dashboard.user', compact('books'));
     }
     
