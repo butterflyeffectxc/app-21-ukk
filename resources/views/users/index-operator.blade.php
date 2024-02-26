@@ -41,12 +41,14 @@
                                             <td>
                                                 <div class="btn-group mr-2" role="group" aria-label="Action Button">
                                                     <a href="/admins/detail/{{ $admin->id}}" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
+                                                    @if (Auth::user()->id == $admin->id)
                                                     <a href="/admins/edit/{{ $admin->id}}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
                                                     <form action="admins/delete/{{ $admin->id}}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
                                                     </form>  
+                                                    @endif
                                                 </div>
                                             </td>
                                             </tr>

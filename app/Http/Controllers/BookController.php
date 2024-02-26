@@ -20,7 +20,7 @@ class BookController extends Controller
 
     public function getById(Book $book)
     {
-        return view('books.detail', compact('book', 'reviews'));
+        return view('books.detail', compact('book'));
     }
 
     /**

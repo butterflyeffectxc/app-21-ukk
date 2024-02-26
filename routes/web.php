@@ -29,6 +29,7 @@ use Symfony\Component\HttpKernel\Profiler\Profile;
 //     return view('welcome');
 // });
 // Auth
+Route::redirect('/', '/login');
 Route::get('/login', [AuthenticationController::class, "loginView"]);
 Route::get('/register', [AuthenticationController::class, "registerView"]);
 Route::post('/login', [AuthenticationController::class, "login"]);
