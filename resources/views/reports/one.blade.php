@@ -30,8 +30,8 @@
             </tbody>
         </table>
         <hr class="hr">
-        <p>Bookholder: {{ $borrowing->users->name }}</p>
-        <p>Booktify: Auth Name</p>
+        <p>Booktify: {{ $borrowing->users->name }}</p>
+        <p>Librarian: {{ Auth::user()->name }}</p>
         <p>Borrow Date: {{ $borrowing->start_date }}</p>
         <p>Return Date: {{ $borrowing->end_date }}</p>
         {{-- </div> --}}

@@ -8,7 +8,7 @@
             <div class="card-header mb-2">
                 <div class="d-flex justify-content-between">
                     <h5 class="card-title">
-                        Category List
+                        Genre List
                     </h5>
                     <div class="ml-auto">
                         <a href="/categories/create" class="btn btn-primary add-button"><span>Add Data</span></a>

@@ -12,7 +12,7 @@ class BorrowingController extends Controller
 {
     public function index()
     {
-        $borrowings = Borrowing::with(['books'])->get();
+        $borrowings = Borrowing::with(['books'])->orderBy('id', 'desc')->get();
         return view('borrowings.index', compact('borrowings'));
     }
 

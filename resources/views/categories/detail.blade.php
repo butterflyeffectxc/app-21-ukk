@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('contentTwo')
     <div class="page-heading">
-        <h3>Detail Category</h3>
+        <h3>Detail Genre</h3>
     </div>
     <div class="page-content">
         <div class="card px-3">

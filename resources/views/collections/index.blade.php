@@ -40,7 +40,7 @@
                                         <p class="card-text"><small class="text-muted">@foreach ($collection->books->categories as $category)
                                                 {{ $category->name }}
                                         @endforeach</small></p>
-                                        <p class="card-text">{{ $collection->books->description }}</p>
+                                        <p class="card-text">{{ Str::limit($collection->books->description, 20)  }}</p>
                                     </div>
                                 </div>
                             </div>

@@ -14,13 +14,13 @@ class BookController extends Controller
 {
     public function index()
     {
-        $books = Book::with(['categories'])->get();
+        $books = Book::with(['categories'])->orderBy('id', 'desc')->get();
         return view('books.index', compact('books'));
     }
 
     public function getById(Book $book)
     {
-        return view('books.detail', compact('book', 'reviews'));
+        return view('books.detail', compact('book'));
     }
 
     /**
@@ -91,12 +91,16 @@ class BookController extends Controller
             'description' => 'nullable',
             'categories' => 'required'
         ]);
+        // dd($book);
         if($request['cover']){
-            if($book->cover) $book = Storage::delete($book->cover);
+            if($book->cover) {
+            $cover = Storage::delete($book->cover);
             $cover = $request->file('cover')->store('book-cover');
             $data['cover'] = $cover;
-        } 
-
+        }
+            $cover = $request->file('cover')->store('book-cover');
+            $data['cover'] = $cover;
+        }
         $book->update($data);
         $book->categories()->sync($request['categories']);
         return redirect('/books');

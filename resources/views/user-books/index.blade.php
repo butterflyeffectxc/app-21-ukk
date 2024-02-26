@@ -10,7 +10,7 @@
                     <div class="form-row py-3 mr-3">
                         <div class="col">
                             <button class="btn btn-color dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false" id="filterCategory">
-                                Pick Category
+                                Pick Genre
                               </button>
                               <div class="dropdown-menu">
                                 @foreach ($categories as $category)

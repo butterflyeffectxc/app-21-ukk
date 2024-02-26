@@ -94,7 +94,7 @@
                     <div class="form-group mb-3">
                         <label for="cover" class="form-label">Cover:</label>
                         <input type="file" class="form-control" id="cover" name="cover">
-
+                        <img src="{{ old('cover', asset('storage/' . $book->cover)) }}" alt="" width="100" class="cover-img pt-2">
                     </div>
                     <div class="justify-content-end d-flex">
                         <a href="/books" class="btn btn-warning back-button me-2"><span>Back</span></a>
