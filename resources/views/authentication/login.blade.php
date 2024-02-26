@@ -54,7 +54,7 @@
                 <img src="{{ asset('assets/logo-dark.svg') }}" alt="">
             </div> --}}
             <div class="login-card d-flex justify-content-center align-items-center">
-                <div class="card" style="width: 40rem; max-width: 55rem; height:27rem">
+                <div class="card" style="width: 40rem; max-width: 55rem; height:23rem">
                     <div class="card-body d-flex justify-content-center align-items-center">
                         <div class="row">
                             <div class="col-12 col-md-6 text-center">

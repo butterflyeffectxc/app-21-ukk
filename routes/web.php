@@ -25,10 +25,11 @@ use Symfony\Component\HttpKernel\Profiler\Profile;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/landing-page', function () {
+    return view('dashboard.landing');
+});
 // Auth
+Route::redirect('/', '/login');
 Route::get('/login', [AuthenticationController::class, "loginView"]);
 Route::get('/register', [AuthenticationController::class, "registerView"]);
 Route::post('/login', [AuthenticationController::class, "login"]);
@@ -78,8 +79,8 @@ Route::put('/admins/edit/{user:id}', [OperatorController::class, "update"]);
 Route::delete('/admins/delete/{user:id}', [OperatorController::class, "destroy"]);
 Route::delete('/operators/delete/{user:id}', [OperatorController::class, "destroy"]);
 // Admin - Report
-Route::get('/reports/generate/all',[BorrowingController::class, 'reportAll']);
-Route::get('/report/generate/{borrowing:id}',[BorrowingController::class, 'reportOne']);
+Route::get('/reports/generate/all', [BorrowingController::class, 'reportAll']);
+Route::get('/report/generate/{borrowing:id}', [BorrowingController::class, 'reportOne']);
 // User - Collection
 Route::get('/collections', [CollectionController::class, "index"]);
 Route::get('/collections/detail/{user:id}', [CollectionController::class, "getById"]);

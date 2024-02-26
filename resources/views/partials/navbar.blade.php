@@ -29,11 +29,15 @@
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">Profile</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/user/profile/{{ Auth::user()->id }}">About</a>
-                    <form action="/logout" method="POST">
-                        @csrf
-                        <button class="dropdown-item" type="submit">Logout</button>
-                    </form>
+                    @if (Auth::user())
+                        <a class="dropdown-item" href="/user/profile/{{ Auth::user()->id }}">About</a>
+                        <form action="/logout" method="POST">
+                            @csrf
+                            <button class="dropdown-item" type="submit">Logout</button>
+                        </form>
+                    @else
+                        <a class="dropdown-item" href="/login">Login</a>
+                    @endif
                 </div>
             </li>
         </ul>
